@@ -1,0 +1,101 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>JS tests</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+    <script src="_js/minified.js"></script>
+    <!--script src="_js/jquery.js"></script-->
+  <link rel="stylesheet" href="_css/style.css">
+    
+    <script>
+        var MINI = require('minified');
+        var _=MINI._, $=MINI.$, $$=MINI.$$, EE=MINI.EE, HTML=MINI.HTML;
+                function frankSays($value){
+            $('#speechBubble').set('@class','bubble-right');
+            say($value);
+            
+        }
+        function dartvSays($value){
+            $('#speechBubble').set('@class','bubble-left');
+            say($value);
+            
+        }
+        
+        function say($textForSpeech){
+            $('#speechBubble').fill($textForSpeech);
+        }
+                
+        $(function() {
+            var $timeout = 5000;
+             $('#frank').set({$$fade:0,$bottom: '-100px', $right: '0px'});
+             $('#dart').set({$$fade:0, $bottom: '-100px', $left: '0px'});
+            
+            $('#dart').animate({$$fade: 1, $left :'40px', $bottom: '0px'}, 1050)
+                
+                .then(function(){ return $('#bubblecontainer').set({$display: 'inline'});})
+                .then(function(){ return dartvSays('You are miserable little Tele2 people, now I will format Ur G:\\ drive')})
+                .then(function(){ return $('#frank').animate({$$fade: 1, $right :'40px', $bottom: '0px'}, 1050);})
+                .then(function(){ return $('#bubblecontainer').set({$display: 'inline'});})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return frankSays("Stop right there... I am The Hero of TELE2; Frank, but U can call me Your Majesty! And now I will stop U");})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return dartvSays('U cannot stop me ...');})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return frankSays('Why ?');})
+                .then(function(){ return $.wait(1000)})
+                .then(function(){ return dartvSays('Cuz .... I am Your father');})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return frankSays('Ha Ha Ha .... C`mon it is an old joke');})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return dartvSays('DO NOT laugh at my FEELINGS lamb');})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return dartvSays('ha ha ha... Excuse me, I really cannot stop laughing,     (I feel Vader is not that old one)');})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return dartvSays('Ok, Look .. Wikipedia says that it is cool');})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return $('#wiki').add('<img src="_img/wikipedia.png">');})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return frankSays('Anyway I can stop U, because ... [noise of drums].. I have a Magic App');})
+                .then(function(){ return $.wait($timeout)})
+                .then(function(){ return dartvSays('Ouuuuuuuu, what the #ACK');})
+            })
+            
+            
+            ;
+    
+                  
+            
+        });
+    
+    </script>
+
+</head>
+
+<body>
+    <div id="img_container_holder">
+        
+        <div id="wiki"></div>
+        
+        
+    
+        <div id="bubblecontainer">
+            <div id="speechBubble" class="bubble-left"></div>
+        </div>    
+        
+        <div id ="dart" class="img_container">
+            <img id="img_dart" src="_img/dartV.png">
+        </div>
+        
+        <div id="frank" class="img_container">
+            <img id="img_frank" src="_img/Frank1.png">
+        </div>
+        
+    </div>
+    
+    
+    
+</body>
+</ht
